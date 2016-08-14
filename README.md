@@ -79,7 +79,7 @@ Next is to train the PCA learn the data, and is done using the following codes:
 # Train the algorithm for the images
 model <- learn(imgData)
 ```
-### EigenFaces
+### Eigen Faces
 After training, we now plot the eigenfaces or the principal component scores obtained by rotating the face vectors. The PC1 explains most of the variance of the model.
 ```{r}
 # Show the eigen faces
@@ -89,73 +89,73 @@ showFace(model)
 ### Face Recognition
 And finally, to do face recognition we use the testing data set. This is done using the `recognize` function as shown below. The output is an image of two faces, the left image correspond to the input face from the testing data, and the right image is the predicted image from the training dataset.
 
-#### Input Subject: KA | Input Expression: Angry
+#### Input Subject: KA | Input Expression: Angry | Expression Classification: Misclassified
 ```{r}
 recognize("~/Downloads/jaffe_testing/KA.AN1.39.tiff", model, display = TRUE, rule = "simple f-share")
 ```
 [![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/kaan.png)]("Eigenfaces")
-#### Input Subject: KA | Input Expression: Disagree
+#### Input Subject: KA | Input Expression: Disagree | Expression Classification: Correctly Classified
 ```{r}
 recognize("~/Downloads/jaffe_testing/KA.DI1.42.tiff", model, display = TRUE, rule = "simple f-share")
 ```
 [![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/kadi1.png)]("Eigenfaces")
-#### Input Subject: KA | Input Expression: Fear
+#### Input Subject: KA | Input Expression: Fear | Expression  Classification: Correctly Classified
 ```{r}
 recognize("~/Downloads/jaffe_testing/KA.FE1.45.tiff", model, display = TRUE, rule = "simple f-share")
 ```
 [![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/kafe.png)]("Eigenfaces")
-#### Input Subject: KA | Input Expression: Happy
+#### Input Subject: KA | Input Expression: Happy | Expression Classification: Misclassified
 ```{r}
 recognize("~/Downloads/jaffe_testing/KA.HA1.29.tiff", model, display = TRUE, rule = "simple f-share")
 ```
 [![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/kaha.png)]("Eigenfaces")
-#### Input Subject: KA | Input Expression: Neutral
+#### Input Subject: KA | Input Expression: Neutral | Expression Classification: Correctly Classified
 ```{r}
 recognize("~/Downloads/jaffe_testing/KA.NE1.26.tiff", model, display = TRUE, rule = "simple f-share")
 ```
 [![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/kane.png)]("Eigenfaces")
-#### Input Subject: KA | Input Expression: Sad
+#### Input Subject: KA | Input Expression: Sad | Expression Classification:  Correctly Classified
 ```{r}
 recognize("~/Downloads/jaffe_testing/KA.SA1.33.tiff", model, display = TRUE, rule = "simple f-share")
 ```
 [![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/kasa.png)]("Eigenfaces")
-#### Input Subject: KA | Input Expression: Surprise
+#### Input Subject: KA | Input Expression: Surprise | Expression Classification: Correctly Classified
 ```{r}
 recognize("~/Downloads/jaffe_testing/KA.SU1.36.tiff", model, display = TRUE, rule = "simple f-share")
 ```
 [![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/kasu.png)]("Eigenfaces")
 
-#### Input Subject: KL | Input Expression: Angry
+#### Input Subject: KL | Input Expression: Angry | Expression Classification: Correctly Classified
 ```{r}
 recognize("~/Downloads/jaffe_testing/KL.AN1.167.tiff", model, display = TRUE, rule = "simple f-share")
 ```
 [![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/klan.png)]("Eigenfaces")
-#### Input Subject: KL | Input Expression: Disagree
+#### Input Subject: KL | Input Expression: Disagree | Expression Classification: Correctly Classified
 ```{r}
 recognize("~/Downloads/jaffe_testing/KL.DI1.170.tiff", model, display = TRUE, rule = "simple f-share")
 ```
 [![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/kldi.png)]("Eigenfaces")
-#### Input Subject: KL | Input Expression: Fear
+#### Input Subject: KL | Input Expression: Fear | Expression Classification: Misclassified
 ```{r}
 recognize("~/Downloads/jaffe_testing/KL.FE1.174.tiff", model, display = TRUE, rule = "simple f-share")
 ```
 [![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/klfe.png)]("Eigenfaces")
-#### Input Subject: KL | Input Expression: Happy
+#### Input Subject: KL | Input Expression: Happy | Expression Classification: Correctly Classified
 ```{r}
 recognize("~/Downloads/jaffe_testing/KL.HA1.158.tiff", model, display = TRUE, rule = "simple f-share")
 ```
 [![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/klha.png)]("Eigenfaces")
-#### Input Subject: KL | Input Expression: Neutral
+#### Input Subject: KL | Input Expression: Neutral | Expression Classification: Correctly Classified
 ```{r}
 recognize("~/Downloads/jaffe_testing/KL.NE1.155.tiff", model, display = TRUE, rule = "simple f-share")
 ```
 [![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/klne.png)]("Eigenfaces")
-#### Input Subject: KL | Input Expression: Sad
+#### Input Subject: KL | Input Expression: Sad | Expression Classification: Correctly Classified
 ```{r}
 recognize("~/Downloads/jaffe_testing/KL.SA1.161.tiff", model, display = TRUE, rule = "simple f-share")
 ```
 [![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/klsa.png)]("Eigenfaces")
-#### Input Subject: KL | Input Expression: Surprise
+#### Input Subject: KL | Input Expression: Surprise | Expression Classification: Correctly Classified
 ```{r}
 recognize("~/Downloads/jaffe_testing/KL.SU1.164.tiff", model, display = TRUE, rule = "simple f-share")
 ```
