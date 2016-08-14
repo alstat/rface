@@ -44,6 +44,7 @@ recognize <- function(x, y, rule = "simple f-share", display = TRUE) {
   # Read the input image
   in_img <- readImage(as.character(x))
   ydat <- y[[2L]] # Extract the input data of all images
+  
   # Conditions for the dimensions of the image
   if (length(dim(in_img)) == 3L) {
     if (length(ydat[[2L]]) == length(dim(in_img))) {
@@ -55,7 +56,7 @@ recognize <- function(x, y, rule = "simple f-share", display = TRUE) {
     }
   } else if (length(dim(in_img)) == 2L) {
     if (dim(in_img)[1L] != ydat[[2L]][1L] ||
-          dim(in_img)[2L] != ydat[[2L]][2L]) {
+        dim(in_img)[2L] != ydat[[2L]][2L]) {
       stop("The dimensions of x and y are not compatible. x and y must have the same dimensions.")
     }
   }
@@ -69,8 +70,11 @@ recognize <- function(x, y, rule = "simple f-share", display = TRUE) {
   
   # Generate the image using the first k images
   imgH <- face_mu <- y[[3L]]; pc <- y[[1L]]
+  
+  # Project the input to the eigenspace
   if (is.null(rule)) {
-    imgH <- imgH + pc$scores %*% t(loadings(pc))
+    in_img2 <- t(pc$rotation) %*% as.matrix(in_img1 - face_mu)
+    err <- t(pc$x) - matrix(rep(in_img2, 2), (pc$x %>% dim)[1], (pc$x %>% dim)[1])
   } else if (!is.null(rule)) {
     # Extract the maximum number of PCs for the image
     if (rule == "rel-broken stick") {
@@ -80,26 +84,18 @@ recognize <- function(x, y, rule = "simple f-share", display = TRUE) {
     } else if (rule == "broken stick") {
       k <- max(brStick(pc$sdev ^ 2L)[["Use PC(s):"]])
     }
-    if (k == dim(ydat[[1L]])[2L]) {
-      imgH <- imgH + pc$scores %*% loadings(pc)
-    } else {
-      for (i in 1L:k) {
-        imgH <- imgH + cbind(pc$scores[,i]) %*% rbind(loadings(pc)[,i])
-      } 
-    }
+    in_img2 <- t(pc$rotation[, 1:k]) %*% as.matrix(in_img1 - face_mu)
+    err <- t(pc$x[, 1:k]) - matrix(rep(in_img2, (t(pc$x[, 1:k]) %>% dim)[2]), (t(pc$x[, 1:k]) %>% dim)[1], (t(pc$x[, 1:k]) %>% dim)[2])
   }
   
-  # Extract the error by subtracting the fitted image to all image data
-  err <- as.matrix(as.data.frame(imgH) - as.matrix(in_img1))
-  
-  # And for each error obtain the norm/length of the vector
+  # Get the norm of the error
   out <- getNorm(err)
   
-  # The one with the smallest norm will tell us the closest image
   min_err <- which(out == min(out))
   img_mat <- array(0L, c(dim(in_img)[1L:2L], 2L))
   img_mat[,,] <- c(matrix(in_img1[,1L], ncol = dim(in_img)[2L], byrow = TRUE),
                    matrix(ydat[[1L]][, min_err], ncol = dim(in_img)[2L], byrow = TRUE))
+  
   if (display == TRUE) {
     display(img_mat[,,1L:2L], all = T, method = "r", title = c("Input", "Recognized as"))
   } 

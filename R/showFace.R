@@ -34,18 +34,21 @@ showFace <- function(x, all = TRUE, method = "raster", ...) {
     rawImges <- mat_to_image(img, d)
     display(rawImges, all = all, method = method, ...)
   } else if (class(x) == "learn") {
-    x <- model
-    scores <- x[[1L]]$scores
+    y <- x[[2L]][[1L]]
+    pc <- princomp(y)
+    scores <- pc$scores
     imgDim <- x[[2L]][[2L]]
+    
     cont <- function(x) {
       out <- (x - min(x) + 1) / (max(x) - min(x) + 1)
       out
     }
+    
     imges <- mat_to_image(scores, imgDim)
     imgesAdj <- array(0, c(imgDim[1:2], ncol(scores)))
     
     for (i in 1:ncol(scores)) imgesAdj[,, i] <- cont(imges[,, i])
-    display(imgesAdj, all = all, method = method, ...)
+    display(imgesAdj, all = TRUE, method = method, ...)
   } else {
     x <- x$"Image"
     display(x, all = all, method = method, ...)
