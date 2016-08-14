@@ -20,11 +20,12 @@ biocLite()
 biocLite("EBImage")
 ```
 
-## Authors
+## Author
 * [Al-Ahmadgaid B. Asaad](https://github.com/alstat) (Maintainer)
  * email: alstated@gmail.com
  * blog: http://alstatr.blogspot.com/
-## Contributors
+ 
+## Contributor
 * Joselito C. Magadia
  * email: j_magadia@yahoo.com
  
