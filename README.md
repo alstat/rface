@@ -20,16 +20,29 @@ biocLite()
 biocLite("EBImage")
 ```
 
+## Installation
+The **rface** package is not yet on [CRAN][5] and is currently hosted in [github][6]. Hence to install this, we will need the **devtools** R package. To do so, run the following
+```{r}
+install.packages("devtools")
+```
+Once everything is in place, run the following code
+```{r}
+library(devtools)
+install_github("alstat/rface")
+```
+
 ## Author
 * [Al-Ahmadgaid B. Asaad](https://github.com/alstat) (Maintainer)
  * email: alstated@gmail.com
  * blog: http://alstatr.blogspot.com/
  
 ## Contributor
-* Joselito C. Magadia
+* Joselito C. Magadia, Ph.D.
  * email: j_magadia@yahoo.com
  
 [1]: http://www.kasrl.org/jaffe.html
 [2]: http://cswww.essex.ac.uk/mv/allfaces/
 [3]: http://bioconductor.org/packages/release/bioc/html/EBImage.html
 [4]: http://bioconductor.org
+[5]: https://cran.r-project.org
+[6]: https://github.com
