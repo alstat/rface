@@ -5,7 +5,7 @@
 #' principal componanent analysis and neural networks.
 #' 
 #' @author Al-Ahmadgaid B. Asaad
-#' @import Rcpp reshape2 lattice
+#' @import Rcpp reshape2 lattice magrittr
 #' @docType package
 #' @useDynLib rface
 #' @name rface-package

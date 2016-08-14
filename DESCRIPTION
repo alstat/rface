@@ -13,9 +13,11 @@ LinkingTo: Rcpp, RcppArmadillo
 Depends:
     EBImage (>= 4.8.1),
     reshape2 (>= 1.4.1),
-    lattice (>= 0.20-31)
+    lattice (>= 0.20-31),
+    magrittr
 Imports:
     EBImage,
     reshape2,
-    lattice
+    lattice,
+    magrittr
 RoxygenNote: 5.0.1
