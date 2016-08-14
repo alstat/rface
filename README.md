@@ -65,9 +65,13 @@ showFace(imgData)
 
 Now in order for PCA to learn, we remove the "common face" or the average of all input face vectors. This computation is automatically done in the `learn` function. But for us to see how this average face looks like see the following code:
 ```{r}
+# Take the average of the faces
+img_mean <- aveFace(imgData, display = FALSE)
 
+# Show the average of the faces
+showFace(img_mean)
 ```
-
+[![alt text](https://github.com/alstat/SampleImages/blob/master/figure/Rplot1.png)]("Average Faces")
 ## Author
 * [Al-Ahmadgaid B. Asaad](https://github.com/alstat) (Maintainer)
  * email: alstated@gmail.com
