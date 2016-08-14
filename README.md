@@ -160,10 +160,6 @@ recognize("~/Downloads/jaffe_testing/KL.SU1.164.tiff", model, display = TRUE, ru
 ```
 [![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/klsu.png)]("Eigenfaces")
 
-```{r}
-```
-
-
 ## Author
 * [Al-Ahmadgaid B. Asaad](https://github.com/alstat) (Maintainer)
  * email: alstated@gmail.com
