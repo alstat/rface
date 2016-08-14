@@ -57,6 +57,11 @@ imgData <- importImages("~/Downloads/jaffe_training/", display = FALSE)
 ```
 **Note:** When specifying the location of the directory make sure to put forward slash at the end. For example, the correct set up is: `"~/Downloads/jaffe_training/"`; but this one: `"~/Downloads/jaffe_training"` returns an error.
 
+To display the imported images run the following codes:
+```{r}
+showFace(imgData)
+```
+[![alt text](/Rplot.png)](https://github.com/alstat/SampleImages/tree/master/figure/ "Title")
 ## Author
 * [Al-Ahmadgaid B. Asaad](https://github.com/alstat) (Maintainer)
  * email: alstated@gmail.com
