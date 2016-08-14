@@ -169,10 +169,6 @@ recognize("~/Downloads/jaffe_testing/KL.SU1.164.tiff", model, display = TRUE, ru
  * email: alstated@gmail.com
  * blog: http://alstatr.blogspot.com/
  
-## Contributor
-* Joselito C. Magadia, Ph.D.
- * email: j_magadia@yahoo.com
- 
 [1]: http://www.kasrl.org/jaffe.html
 [2]: http://cswww.essex.ac.uk/mv/allfaces/
 [3]: http://bioconductor.org/packages/release/bioc/html/EBImage.html
