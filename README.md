@@ -62,6 +62,12 @@ To display the imported images run the following codes:
 showFace(imgData)
 ```
 [![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/Rplot.png)]("JAFFE Database")
+
+Now in order for PCA to learn, we remove the "common face" or the average of all input face vectors. This computation is automatically done in the `learn` function. But for us to see how this average face looks like see the following code:
+```{r}
+
+```
+
 ## Author
 * [Al-Ahmadgaid B. Asaad](https://github.com/alstat) (Maintainer)
  * email: alstated@gmail.com
