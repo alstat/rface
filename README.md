@@ -29,13 +29,21 @@ library(devtools)
 install_github("alstat/rface")
 ```
 ## Illustration 1 (JAFFE Database)
-As an example, consider the JAFFE database. To reproduce the results in this section we recommend to download the JAFFE data set in the folder above.
+As an example, consider the JAFFE database. To reproduce the results in this section we recommend to download the JAFFE data set [here][7]. The link contains zip files both for the training and testing data set.
 
 ### Data Description
 The database contains 213 images of 7 facial expressions (6 basic facial expressions + 1 neutral) posed by 10 Japanese female models. Each image has been rated on 6 emotion adjectives by 60 Japanese subjects. The database was planned and assembled by Michael Lyons, Miyuki Kamachi, and Jiro Gyoba. We thank Reiko Kubota for her help as a research assistant. The photos were taken at the Psychology Department in Kyushu University.
+The six facial expressions captured per subject are the following:
+
+* Angry
+* Disagree
+* Fear
+* Happy
+* Sad
+* Surprise
 
 ### Data Partitioning (Training and Testing)
-
+The original data from JAFFE website contains a list of facial images in one folder. For this illustration, we grouped the data into training and testing. In particular, each facial expressions of the subject mentioned above consists of at least two facial images. And to test the performance of the PCA, we extracted one facial image for each expression per subject and put it into a testing data set. Thus the remaining part of the data will serve as the training data set.
 
 ## Author
 * [Al-Ahmadgaid B. Asaad](https://github.com/alstat) (Maintainer)
@@ -52,3 +60,4 @@ The database contains 213 images of 7 facial expressions (6 basic facial express
 [4]: http://bioconductor.org
 [5]: https://cran.r-project.org
 [6]: https://github.com
+[7]: https://github.com/alstat/SampleImages/tree/master/imagedata
