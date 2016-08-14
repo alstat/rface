@@ -61,7 +61,7 @@ To display the imported images run the following codes:
 ```{r}
 showFace(imgData)
 ```
-[![alt text](/Rplot.png)](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/ "JAFFE Database")
+[![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/Rplot.png)]("JAFFE Database")
 ## Author
 * [Al-Ahmadgaid B. Asaad](https://github.com/alstat) (Maintainer)
  * email: alstated@gmail.com
