@@ -63,6 +63,7 @@ showFace(imgData)
 ```
 [![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/Rplot.png)]("JAFFE Database")
 
+### Mean Face
 Now in order for PCA to learn, we remove the "common face" or the average of all input face vectors. This computation is automatically done in the `learn` function. But for us to see how this average face looks like see the following code:
 ```{r}
 # Take the average of the faces
@@ -72,6 +73,20 @@ img_mean <- aveFace(imgData, display = FALSE)
 showFace(img_mean)
 ```
 [![alt text](https://github.com/alstat/SampleImages/blob/master/figure/Rplot1.png)]("Average Faces")
+### PCA Training
+Next is to train the PCA learn the data, and is done using the following codes:
+```{r}
+# Train the algorithm for the images
+model <- learn(imgData)
+```
+### EigenFaces
+After training, we now plot the eigenfaces or the principal component scores obtained by rotating the face vectors. The PC1 explains most of the variance of the model.
+```{r}
+# Show the eigen faces
+showFace(model)
+```
+[![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/Rplot01.png)]("Eigenfaces")
+
 ## Author
 * [Al-Ahmadgaid B. Asaad](https://github.com/alstat) (Maintainer)
  * email: alstated@gmail.com
