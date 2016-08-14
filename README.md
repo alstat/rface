@@ -98,7 +98,7 @@ recognize("~/Downloads/jaffe_testing/KA.AN1.39.tiff", model, display = TRUE, rul
 ```{r}
 recognize("~/Downloads/jaffe_testing/KA.DI1.42.tiff", model, display = TRUE, rule = "simple f-share")
 ```
-[![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/kadi.png)]("Eigenfaces")
+[![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/kadi1.png)]("Eigenfaces")
 #### Input Subject: KA | Input Expression: Fear
 ```{r}
 recognize("~/Downloads/jaffe_testing/KA.FE1.45.tiff", model, display = TRUE, rule = "simple f-share")
