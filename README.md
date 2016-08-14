@@ -45,6 +45,18 @@ The six facial expressions captured per subject are the following:
 ### Data Partitioning (Training and Testing)
 The original data from JAFFE website contains a list of facial images in one folder. For this illustration, we grouped the data into training and testing. In particular, each facial expressions of the subject mentioned above consists of at least two facial images. And to test the performance of the PCA, we extracted one facial image for each expression per subject and put it into a testing data set. Thus the remaining part of the data will serve as the training data set.
 
+### Import the Data
+After downloading the data, we can now import it to the workspace. And this is done as follows:
+
+```{r}
+# Call the Face Recognition package
+library(rface)
+
+# Import all images in the directory "data/jaffe/"
+imgData <- importImages("~/Downloads/jaffe_training/", display = FALSE)
+```
+**Note:** When specifying the location of the directory make sure to put forward slash at the end. For example, the correct set up is: `"~/Downloads/jaffe_training/"`; but this one: `"~/Downloads/jaffe_training"` returns an error.
+
 ## Author
 * [Al-Ahmadgaid B. Asaad](https://github.com/alstat) (Maintainer)
  * email: alstated@gmail.com
