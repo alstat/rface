@@ -22,12 +22,29 @@ as recognized by the model.}
 Function for recognizing the image using the model trained from the data.
 }
 \examples{
-library(fr)
+To reproduce this example, please refer to \\code{https://github.com/alstat/rface}
 
+# Call the Face Recognition package
+library(rface)
 # Import all images in the directory "data/jaffe/"
-imgData <- importImges("~/Documents/Data/jaffe/", display = FALSE)
+imgData <- importImages("~/Downloads/jaffe_training/", display = FALSE)
 
+# Show imported images
+showFace(imgData)
+
+# Take the average of the faces
+img_mean <- aveFace(imgData, display = FALSE)
+
+# Show the average of the faces
+showFace(img_mean)
+
+# Train the algorithm for the images
 model <- learn(imgData)
-a <- recognize("~/Documents/Data/jaffe/KA.FE3.47.tiff", criterion, display = TRUE, rule = "rel-broken stick")
+
+# Show the eigen faces
+showFace(model)
+
+# Input an image and recognize it
+recognize("~/Downloads/jaffe_testing/KA.AN1.39.tiff", model, display = TRUE, rule = "simple f-share")
 }
 

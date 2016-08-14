@@ -19,15 +19,17 @@
 #'        both are returned.
 #' 
 #' @examples
-#' library(fr)
+#' To reproduce this example, please refer to \code{https://github.com/alstat/rface}
 #' 
-#' filenames <- c("admars.1.jpg", 
-#'                "ahodki.1.jpg", 
-#'                "ajflem.1.jpg",
-#'                "ajones.1.jpg",
-#'                "ajsega.1.jpg",
-#'                "akatsi.1.jpg")
-#' imgData <- importImges(x = filenames, dir = "~/Documents/Data/faces94/", band = "blue", display = TRUE)
+#' # Call the Face Recognition package
+#' library(rface)
+#' 
+#' # Import all images in the directory "data/jaffe/"
+#' imgData <- importImages("~/Downloads/jaffe_training/", display = FALSE)
+#' 
+#' # Take the average of the faces
+#' img_mean <- aveFace(imgData, display = FALSE)
+#' showFace(img_mean)
 aveFace <- function (x, display = TRUE) {
   if (class(x) == "recognize") {
     imgDim <- x[[3L]]

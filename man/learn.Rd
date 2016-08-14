@@ -14,12 +14,17 @@ transformed into matrix by \code{\link{importImages}} function.}
 Supervised the algorithm to learn from the training data set.
 }
 \examples{
-library(fr)
+To reproduce this example, please refer to \\code{https://github.com/alstat/rface}
 
-imgData <- importImages("~/Documents/Data/jaffe/", display = FALSE)
+# Call the Face Recognition package
+library(rface)
+# Import all images in the directory "data/jaffe/"
+imgData <- importImages("~/Downloads/jaffe_training/", display = FALSE)
+
+# Train the algorithm for the images
 model <- learn(imgData)
 
-# Display the Eigenfaces
-showFace(criterion)
+# Show the eigen faces
+showFace(model)
 }
 

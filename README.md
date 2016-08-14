@@ -86,6 +86,47 @@ After training, we now plot the eigenfaces or the principal component scores obt
 showFace(model)
 ```
 [![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/Rplot01.png)]("Eigenfaces")
+### Face Recognition
+And finally, to do face recognition we use the testing data set. This is done using the `recognize` function as shown below:
+```{r}
+recognize("~/Downloads/jaffe_testing/KA.AN1.39.tiff", model, display = TRUE, rule = "simple f-share")
+```
+[![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/kaan1.png)]("Eigenfaces")
+```{r}
+recognize("~/Downloads/jaffe_testing/KA.DI1.42.tiff", model, display = TRUE, rule = "simple f-share")
+```
+[![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/kadi.png)]("Eigenfaces")
+```{r}
+recognize("~/Downloads/jaffe_testing/KA.FE1.45.tiff", model, display = TRUE, rule = "simple f-share")
+```
+[![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/kafe.png)]("Eigenfaces")
+```{r}
+recognize("~/Downloads/jaffe_testing/KA.HA1.29.tiff", model, display = TRUE, rule = "simple f-share")
+```
+[![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/kaha.png)]("Eigenfaces")
+```{r}
+recognize("~/Downloads/jaffe_testing/KA.NE1.26.tiff", model, display = TRUE, rule = "simple f-share")
+```
+[![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/kana.png)]("Eigenfaces")
+```{r}
+recognize("~/Downloads/jaffe_testing/KA.SA1.33.tiff", model, display = TRUE, rule = "simple f-share")
+```
+[![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/kasa.png)]("Eigenfaces")
+```{r}
+recognize("~/Downloads/jaffe_testing/KA.SU1.36.tiff", model, display = TRUE, rule = "simple f-share")
+```
+[![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/kasu.png)]("Eigenfaces")
+
+```{r}
+recognize("~/Downloads/jaffe_testing/KL.AN1.167.tiff", model, display = TRUE, rule = "simple f-share")
+recognize("~/Downloads/jaffe_testing/KL.DI1.170.tiff", model, display = TRUE, rule = "simple f-share")
+recognize("~/Downloads/jaffe_testing/KL.FE1.174.tiff", model, display = TRUE, rule = "simple f-share")
+recognize("~/Downloads/jaffe_testing/KL.HA1.158.tiff", model, display = TRUE, rule = "simple f-share")
+recognize("~/Downloads/jaffe_testing/KL.NE1.155.tiff", model, display = TRUE, rule = "simple f-share")
+recognize("~/Downloads/jaffe_testing/KL.SA1.161.tiff", model, display = TRUE, rule = "simple f-share")
+recognize("~/Downloads/jaffe_testing/KL.SU1.164.tiff", model, display = TRUE, rule = "simple f-share")
+```
+
 
 ## Author
 * [Al-Ahmadgaid B. Asaad](https://github.com/alstat) (Maintainer)

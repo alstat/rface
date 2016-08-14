@@ -28,14 +28,14 @@ both are returned.}
 This function uses PCA to compute the eigenfaces and recognizes the data.
 }
 \examples{
-library(fr)
+To reproduce this example, please refer to \\code{https://github.com/alstat/rface}
 
-rawData <- list()
-for (i in 1:101) {
-  rawData[[i]] <- melt(t(readImage(paste("~/Documents/Data/faces94/", i, ".jpg", sep = ""))[,,1]))[-c(1,2)]
-}
+# Call the Face Recognition package
+library(rface)
+# Import all images in the directory "data/jaffe/"
+imgData <- importImages("~/Downloads/jaffe_training/", display = FALSE)
 
-face_mat <- matrix(unlist(rawData), ncol = 101)
-recognize("~/Documents/Data/faces94/42.jpg", face_mat)
+# Show imported images
+showFace(imgData)
 }
 

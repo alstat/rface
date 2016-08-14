@@ -13,13 +13,30 @@
 #'        as recognized by the model.
 #' 
 #' @examples
-#' library(fr)
+#' To reproduce this example, please refer to \code{https://github.com/alstat/rface}
 #' 
+#' # Call the Face Recognition package
+#' library(rface)
 #' # Import all images in the directory "data/jaffe/"
-#' imgData <- importImges("~/Documents/Data/jaffe/", display = FALSE)
+#' imgData <- importImages("~/Downloads/jaffe_training/", display = FALSE)
 #' 
+#' # Show imported images
+#' showFace(imgData)
+#' 
+#' # Take the average of the faces
+#' img_mean <- aveFace(imgData, display = FALSE)
+#' 
+#' # Show the average of the faces
+#' showFace(img_mean)
+#' 
+#' # Train the algorithm for the images
 #' model <- learn(imgData)
-#' a <- recognize("~/Documents/Data/jaffe/KA.FE3.47.tiff", criterion, display = TRUE, rule = "rel-broken stick")
+#' 
+#' # Show the eigen faces
+#' showFace(model)
+#' 
+#' # Input an image and recognize it
+#' recognize("~/Downloads/jaffe_testing/KA.AN1.39.tiff", model, display = TRUE, rule = "simple f-share")
 recognize <- function(x, y, rule = "simple f-share", display = TRUE) {
   if (class(y) != 'learn') stop ("y is of class 'learn'.")
   if (class(x) != 'character') stop ("x should be string.")
@@ -29,10 +46,12 @@ recognize <- function(x, y, rule = "simple f-share", display = TRUE) {
   ydat <- y[[2L]] # Extract the input data of all images
   # Conditions for the dimensions of the image
   if (length(dim(in_img)) == 3L) {
-    if (dim(in_img)[1L] != ydat[[2L]][1L] ||
+    if (length(ydat[[2L]]) == length(dim(in_img))) {
+      if (dim(in_img)[1L] != ydat[[2L]][1L] ||
           dim(in_img)[2L] != ydat[[2L]][2L] ||
           dim(in_img)[3L] != ydat[[2L]][3L]) {
-      stop("The dimensions of x and y are not compatible. x and y must have the same dimensions.")
+        stop("The dimensions of x and y are not compatible. x and y must have the same dimensions.")
+      } 
     }
   } else if (length(dim(in_img)) == 2L) {
     if (dim(in_img)[1L] != ydat[[2L]][1L] ||
