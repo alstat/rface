@@ -20,11 +20,11 @@ biocLite("EBImage")
 
 ## Authors
 * [Al-Ahmadgaid B. Asaad](https://github.com/alstat) (Maintainer)
-  * email: alstated@gmail.com
-  * blog: http://alstatr.blogspot.com/
+ * email: alstated@gmail.com
+ * blog: http://alstatr.blogspot.com/
 ## Contributors
 * Joselito C. Magadia
-  * email: j_magadia@yahoo.com
+ * email: j_magadia@yahoo.com
  
 [1]: http://www.kasrl.org/jaffe.html
 [2]: http://cswww.essex.ac.uk/mv/allfaces/
