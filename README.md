@@ -87,7 +87,8 @@ showFace(model)
 ```
 [![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/Rplot01.png)]("Eigenfaces")
 ### Face Recognition
-And finally, to do face recognition we use the testing data set. This is done using the `recognize` function as shown below:
+And finally, to do face recognition we use the testing data set. This is done using the `recognize` function as shown below. The output is an image of two faces, the left image correspond to the input face from the testing data, and the right image is the predicted image from the training dataset.
+
 #### Input Subject: KA | Input Expression: Angry
 ```{r}
 recognize("~/Downloads/jaffe_testing/KA.AN1.39.tiff", model, display = TRUE, rule = "simple f-share")
@@ -160,6 +161,9 @@ recognize("~/Downloads/jaffe_testing/KL.SU1.164.tiff", model, display = TRUE, ru
 ```
 [![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/klsu.png)]("Eigenfaces")
 
+## Feedbacks
+This package is still young, please do submit an issue [here][8] if you encounter any problem. It will help me improve the package before submitting to CRAN.
+
 ## Author
 * [Al-Ahmadgaid B. Asaad](https://github.com/alstat) (Maintainer)
  * email: alstated@gmail.com
@@ -172,3 +176,4 @@ recognize("~/Downloads/jaffe_testing/KL.SU1.164.tiff", model, display = TRUE, ru
 [5]: https://cran.r-project.org
 [6]: https://github.com
 [7]: https://github.com/alstat/SampleImages/tree/master/imagedata
+[8]: https://github.com/alstat/rface/issues
