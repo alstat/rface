@@ -92,7 +92,7 @@ And finally, to do face recognition we use the testing data set. This is done us
 ```{r}
 recognize("~/Downloads/jaffe_testing/KA.AN1.39.tiff", model, display = TRUE, rule = "simple f-share")
 ```
-[![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/kaan1.png)]("Eigenfaces")
+[![alt text](https://raw.githubusercontent.com/alstat/SampleImages/master/figure/kaan.png)]("Eigenfaces")
 #### Input Subject: KA | Input Expression: Disagree
 ```{r}
 recognize("~/Downloads/jaffe_testing/KA.DI1.42.tiff", model, display = TRUE, rule = "simple f-share")
